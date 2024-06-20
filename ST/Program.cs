@@ -24,18 +24,18 @@ ST32 st32 = type.NewST32()
 
 uint value = st32.GetValue();
 
-STMap.TryGet("Voxel", out SType? copiedType);
+STMap.TryGet("Voxel", out SType? typeFromMap);
 
-ST32 copy = copiedType!.From(value);
+ST32 st32Copy = typeFromMap!.From(value);
 
-int x = copy.GetField("x");
-int y = copy.GetField("y");
-int z = copy.GetField("z");
-int color = copy.GetField("color");
-int opacity = copy.GetField("opacity");
-int roughness = copy.GetField("roughness");
-int metallic = copy.GetField("metallic");
-int subsurface = copy.GetField("subsurface");
+int x = st32Copy.GetField("x");
+int y = st32Copy.GetField("y");
+int z = st32Copy.GetField("z");
+int color = st32Copy.GetField("color");
+int opacity = st32Copy.GetField("opacity");
+int roughness = st32Copy.GetField("roughness");
+int metallic = st32Copy.GetField("metallic");
+int subsurface = st32Copy.GetField("subsurface");
 
 Console.WriteLine($"x: {x},\ny: {y},\nz: {z},\ncolor: {color},\nopacity: {opacity}," +
                   $"\nroughness: {roughness},\nmetallic: {metallic},\nsubsurface: {subsurface}.\n" +
