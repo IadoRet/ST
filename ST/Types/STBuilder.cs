@@ -25,7 +25,7 @@ public class STBuilder
     
     public STBuilder Register()
     {
-        STMap.Register(_sType);
+        STypes.Register(_sType);
         return this;
     }
     

@@ -1,5 +1,6 @@
 ﻿using ST.Types;
 
+//Create a type with <int_32> as a memory buffer
 SType type = STBuilder.NewType(name: "Voxel")
                       .NextField(name: "x", length: 3)
                       .NextField(name: "y", length: 3)
@@ -12,6 +13,7 @@ SType type = STBuilder.NewType(name: "Voxel")
                       .Register()
                       .Get();
 
+//Create an instance of declared type.
 ST32 st32 = type.NewST32()
                 .SetField("x", 4)
                 .SetField("y", 6)
@@ -24,10 +26,12 @@ ST32 st32 = type.NewST32()
 
 uint value = st32.GetValue();
 
-STMap.TryGet("Voxel", out SType? typeFromMap);
+STypes.TryGet("Voxel", out SType? typeFromMap);
 
+//Copy of an st32 instance (just an <int_32> copy)
 ST32 st32Copy = typeFromMap!.From(value);
 
+//Get values from an <int_32> memory buffer using stored offsets and lengths
 int x = st32Copy.GetField("x");
 int y = st32Copy.GetField("y");
 int z = st32Copy.GetField("z");

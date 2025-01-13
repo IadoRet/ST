@@ -1,6 +1,6 @@
 namespace ST.Types;
 
-public static class STMap
+public static class STypes
 {
     private static readonly Dictionary<string, SType> Types = new ();
     
